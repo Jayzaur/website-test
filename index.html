@@ -1,1 +1,28 @@
-<h1> Hello </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <button onclick="changeImage()">Change Image</button>
+    <img id="image" src="images/frog.jpg" alt="Frog">
+
+    <script>
+        var images = [
+            { src: 'images/frog.jpg', alt: 'Frog' },
+            { src: 'images/space.jpg', alt: 'Space' }
+        ];
+        var currentIndex = 0;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            var img = document.getElementById('image');
+            img.src = images[currentIndex].src;
+            img.alt = images[currentIndex].alt;
+        }
+    </script>
+</body>
+</html>
