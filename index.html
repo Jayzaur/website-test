@@ -8,7 +8,9 @@
 <body>
     <h1>Hello</h1>
     <button onclick="changeImage()">Change Image</button>
+    <button onclick="playSound()">Play Sound</button>
     <img id="image" src="images/frog.jpg" alt="Frog">
+    <audio id="sound" src="sounds/mixkit-arcade-retro-game-over-213.wav"></audio>
 
     <script>
         var images = [
@@ -22,6 +24,11 @@
             var img = document.getElementById('image');
             img.src = images[currentIndex].src;
             img.alt = images[currentIndex].alt;
+        }
+
+        function playSound() {
+            var sound = document.getElementById('sound');
+            sound.play();
         }
     </script>
 </body>
